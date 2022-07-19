@@ -49,4 +49,11 @@ describe('Component ResultBox', () => {
       render(<ResultBox from='PLN' to='PLN' amount={test} />);
     });
   }
+  it('should render proper info when amount is below 0', () => {
+    render(<ResultBox from='PLN' to='USD' amount={-100} />);
+
+    const mainDiv = screen.getByTestId('main-div');
+
+    expect(mainDiv).toHaveTextContent('Wrong value...');
+  });
 });
