@@ -43,4 +43,10 @@ describe('Component ResultBox', () => {
       );
     });
   }
+
+  for (const test of testCases) {
+    it('should render proper info when from===to', () => {
+      render(<ResultBox from='PLN' to='PLN' amount={test} />);
+    });
+  }
 });
